@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-    def is_admin?
-      self.admin
-    end
+  validates_uniqueness_of :username, require :username
+
+def is_admin
+  self.admin?
+end
+  
 end
