@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
 
   root 'static_pages#home'
-  get 'static_pages/help'
+  get '/static_pages/help'
   get 'static_pages/about'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get '/ads/:id', :controller=>'ads', :action=>'show'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
