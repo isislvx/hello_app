@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :ads
 
   root 'static_pages#home'
   get '/static_pages/help'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get '/ads/:id', :controller=>'ads', :action=>'show'
-
+  get '/ads/:index', :controller=>'ads', :action=>'index'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
