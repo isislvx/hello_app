@@ -4,6 +4,14 @@ class AdsController < ApplicationController
   end
   
   def index
+  if user.admin?
    @ads = Ad.all
+  else
+   @ads = Ad.current_user
   end
+
+  def stats
+   @ads = Seller.find(@seller.total_sales)
+  end
+ end
 end
