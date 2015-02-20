@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
-  validates_uniqueness_of :username
+  has_one :seller_id
+  has_many :ads, through: :seller_id
+end
+  
+
 
 def is_admin
   self.admin?
 end
-  
-end
+

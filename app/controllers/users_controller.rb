@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def index
    @users = User.all
   end
+  end
 
   # GET /users/1
   # GET /users/1.json
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = User.new(params[:id])
 
     respond_to do |format|
       if @user.save
@@ -81,4 +82,3 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email)
     end
-end
