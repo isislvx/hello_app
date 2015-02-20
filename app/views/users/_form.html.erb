@@ -1,3 +1,4 @@
+<%= simple_form_for @user do |f| %>
 <html>
   <div class="field">
     <%= f.label :name %><br>
@@ -11,7 +12,6 @@
   <div class="field">
     <%= f.label :address1 %><br>
     <%= f.text_field :address1 %>
-  </div>
   <div class="field">
     <%= f.label :address2 %><br>
     <%= f.text_field :address2 %>
@@ -28,9 +28,8 @@
     <%= f.label :zip %><br>
     <%= f.text_field :zip %>
   </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
-</html>  
-
+</html>
+<% end %>
